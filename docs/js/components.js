@@ -9,5 +9,5 @@ function loadHTML(file, containerId) {
 }
 
 // Cargar navbar y footer
-loadHTML('/componentes/navbar.html', 'navbar');
-loadHTML('/componentes/footer.html', 'footer');
+loadHTML('/components/navbar.html', 'navbar');
+loadHTML('/components/footer.html', 'footer');
