@@ -9,7 +9,7 @@
   <script>
     // Función para cargar un fondo
     function loadBackground(file) {
-      fetch(`/backgrounds/hero_bg.html`)
+      fetch(`/components/backgrounds/hero_bg.html`)
         .then(res => res.text())
         .then(html => document.getElementById('background').innerHTML = html);
     }
