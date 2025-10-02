@@ -1,0 +1,18 @@
+[
+  {
+    "titulo": "Modelo de Detección de Emociones Caninas",
+    "fecha": "Jun 2024",
+    "lugar": "Universidad de Almería",
+    "preview": "Investigación de detección de emociones a través de imágenes.",
+    "descripcion": "articulos/articulo1.md",
+    "etiquetas": ["CNN", "Visión Artificial", "Perros", "Emociones"]
+  },
+  {
+    "titulo": "Modelos en Sistemas de Seguridad por Vision Artificial",
+    "fecha": "2025",
+    "lugar": "Universidad de Almería",
+    "preview": "Profundización en los modelos necesarios para sistemas de seguridad.",
+    "descripcion": "articulos/articulo2.md",
+    "etiquetas": ["CNN", "Visión Artificial", "Video Vigilancia", "Sistemas de Seguridad", "Huellas Biométricas"]
+  }
+]
