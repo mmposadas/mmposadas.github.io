@@ -1,62 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millán Posadas | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1 class="logo">MiPortfolio</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body class="bg-gray-900 text-white font-sans">
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Hola, soy [Tu Nombre]</h2>
-        <p>Desarrollador web enfocado en crear experiencias limpias, rápidas y modernas.</p>
-        <a href="#proyectos" class="btn">Ver proyectos</a>
-      </div>
-    </section>
+  <!-- NAV -->
+  <nav class="flex justify-between items-center p-6">
+    <h1 class="text-xl font-bold">Millán Posadas</h1>
+    <ul class="flex gap-6">
+      <li><a href="#hero" class="hover:text-blue-400">Inicio</a></li>
+      <li><a href="articulos.html" class="hover:text-blue-400">Artículos</a></li>
+    </ul>
+  </nav>
 
-    <section id="sobre-mi" class="about">
-      <div class="container">
-        <h3>Sobre mí</h3>
-        <p>Breve descripción sobre quién eres, tu experiencia, intereses y stack tecnológico.</p>
-      </div>
-    </section>
+  <!-- HERO -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-4">Hola, soy <span class="text-blue-400">Millán</span></h2>
+    <p class="text-lg md:text-xl max-w-2xl mb-6">
+      Ingeniero Informático y Data Scientist en formación. Bienvenido a mi portfolio.
+    </p>
+    <a href="articulos.html" 
+       class="px-6 py-3 bg-blue-500 rounded-xl font-medium hover:bg-blue-600 transition">
+       Leer artículos
+    </a>
+  </section>
 
-    <section id="proyectos" class="projects">
-      <div class="container">
-        <h3>Proyectos destacados</h3>
-        <p>Muy pronto...</p>
-      </div>
-    </section>
-
-    <section id="contacto" class="contact">
-      <div class="container">
-        <h3>Contacto</h3>
-        <p>Puedes escribirme a <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Tu Nombre. Todos los derechos reservados.</p>
-    </div>
+  <!-- FOOTER -->
+  <footer class="py-6 text-center border-t border-gray-700">
+    <p>&copy; 2025 Millán Posadas. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
