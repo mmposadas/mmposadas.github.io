@@ -5,29 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artículos | Millán Posadas</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-gradient {
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
+  
+  <!-- Fondo animado -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 animate-gradient"></div>
 
   <!-- NAV -->
-  <nav class="flex justify-between items-center p-6">
+  <nav class="fixed w-full flex justify-between items-center p-6 bg-gray-900/70 backdrop-blur-md border-b border-gray-800 z-50">
     <h1 class="text-xl font-bold">Millán Posadas</h1>
     <ul class="flex gap-6">
-      <li><a href="index.html#hero" class="hover:text-blue-400">Inicio</a></li>
-      <li><a href="articulos.html" class="hover:text-blue-400">Artículos</a></li>
+      <li><a href="index.html#hero" class="hover:text-blue-400 transition">Inicio</a></li>
+      <li><a href="articulos.html" class="hover:text-blue-400 transition">Artículos</a></li>
     </ul>
   </nav>
 
   <!-- LISTADO DE ARTÍCULOS -->
-  <section class="px-6 py-12 max-w-4xl mx-auto">
+  <section class="px-6 py-12 max-w-4xl mx-auto pt-28">
     <h2 class="text-3xl font-bold mb-8">Artículos & Reflexiones</h2>
     
     <div class="grid gap-6 md:grid-cols-2">
       <!-- CARD ARTÍCULO -->
-      <a href="articulos/articulo1.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition">
+      <a href="articulos/articulo1.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition transform hover:-translate-y-1 hover:shadow-lg">
         <h3 class="text-xl font-semibold mb-2">Mi primer proyecto en VR</h3>
         <p class="text-gray-400 text-sm">Cómo desarrollé un simulador en Oculus Quest.</p>
       </a>
-      <a href="articulos/articulo2.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition">
+      <a href="articulos/articulo2.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition transform hover:-translate-y-1 hover:shadow-lg">
         <h3 class="text-xl font-semibold mb-2">Minería de datos en Twitter</h3>
         <p class="text-gray-400 text-sm">Usando NLP para extraer insights en redes sociales.</p>
       </a>
@@ -36,8 +50,11 @@
 
   <!-- FOOTER -->
   <footer class="py-6 text-center border-t border-gray-700">
-    <p>&copy; 2025 Millán Posadas. Todos los derechos reservados.</p>
+    <p class="mb-2">&copy; 2025 Millán Posadas. Todos los derechos reservados.</p>
+    <div class="flex justify-center gap-6">
+      <a href="https://www.linkedin.com/in/mill%C3%A1n-mill%C3%A1n-posadas/" target="_blank" class="hover:text-blue-400">💼 LinkedIn</a>
+      <a href="mailto:m.mposadas@outlook.es" class="hover:text-blue-400">✉️ Contacto</a>
+    </div>
   </footer>
-
 </body>
 </html>
