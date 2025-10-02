@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículos | Millán Posadas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- NAV -->
+  <nav class="flex justify-between items-center p-6">
+    <h1 class="text-xl font-bold">Millán Posadas</h1>
+    <ul class="flex gap-6">
+      <li><a href="index.html#hero" class="hover:text-blue-400">Inicio</a></li>
+      <li><a href="articulos.html" class="hover:text-blue-400">Artículos</a></li>
+    </ul>
+  </nav>
+
+  <!-- LISTADO DE ARTÍCULOS -->
+  <section class="px-6 py-12 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8">Artículos & Reflexiones</h2>
+    
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- CARD ARTÍCULO -->
+      <a href="articulos/articulo1.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition">
+        <h3 class="text-xl font-semibold mb-2">Mi primer proyecto en VR</h3>
+        <p class="text-gray-400 text-sm">Cómo desarrollé un simulador en Oculus Quest.</p>
+      </a>
+      <a href="articulos/articulo2.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition">
+        <h3 class="text-xl font-semibold mb-2">Minería de datos en Twitter</h3>
+        <p class="text-gray-400 text-sm">Usando NLP para extraer insights en redes sociales.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 text-center border-t border-gray-700">
+    <p>&copy; 2025 Millán Posadas. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
