@@ -24,27 +24,22 @@
   <div id="navbar"></div>
 
   <!-- LISTADO DE ARTÍCULOS -->
-  <section class="px-6 py-12 max-w-4xl mx-auto pt-28">
+  <section class="px-6 py-12 max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-8">Artículos & Reflexiones</h2>
-    
-    <div class="grid gap-6 md:grid-cols-2">
-      <!-- CARD ARTÍCULO -->
-      <a href="articulos/articulo1.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition transform hover:-translate-y-1 hover:shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Mi primer proyecto en VR</h3>
-        <p class="text-gray-400 text-sm">Cómo desarrollé un simulador en Oculus Quest.</p>
-      </a>
-      <a href="articulos/articulo2.html" class="block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition transform hover:-translate-y-1 hover:shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Minería de datos en Twitter</h3>
-        <p class="text-gray-400 text-sm">Usando NLP para extraer insights en redes sociales.</p>
-      </a>
+  
+    <div id="articulos-container" class="grid gap-6 md:grid-cols-2">
+      <!-- Cards generadas dinámicamente -->
     </div>
   </section>
+
+<script src="js/articulos.js"></script>
 
   <!-- FOOTER -->
   <div id="footer"></div>
 
   <!-- Llamada a los componentes -->
   <script src="/js/components.js"></script>
+  <script src="/js/articulos.js"></script>
   
 </body>
 </html>
