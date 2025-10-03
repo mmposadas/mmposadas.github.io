@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data.forEach(articulo => {
         // Crear card
         const card = document.createElement("a");
-        card.href = `articulo.html?id=${articulo.id}`;
+        card.href = `/articulos/articulo.html?id=${articulo.id}`;
         card.className = "block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition";
 
         // Fecha y lugar solo si existen
