@@ -4,7 +4,7 @@
     "fecha": "Jun 2024",
     "lugar": "Universidad de Almería",
     "preview": "Investigación de detección de emociones a través de imágenes.",
-    "descripcion": "articulos/articulo1.md",
+    "descripcion": "/articulos/md/canine_feeling.md",
     "etiquetas": ["CNN", "Visión Artificial", "Perros", "Emociones"]
   },
   {
