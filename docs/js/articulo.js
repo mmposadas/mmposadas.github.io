@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div id="contenido-md" class="prose prose-invert max-w-none"></div>
         ${articulo.colaboracion ? `<p class="text-sm mt-6 text-gray-500">Colaboración: ${articulo.colaboracion}</p>` : ""}
         <div class="flex flex-wrap gap-2 mt-4">
-          ${articulo.etiquetas ? articulo.etiquetas.map(tag => `<span class="px-2 py-1 text-xs bg-blue-600 rounded-lg">${tag}</span>`).join("") : ""}
+          ${articulo.etiquetas ? articulo.etiquetas.map(tag => `<span class="px-2 py-1 text-xs bg-sky-600 rounded-lg">${tag}</span>`).join("") : ""}
         </div>
       `;
 
