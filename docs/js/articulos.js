@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (articulo.etiquetas && articulo.etiquetas.length > 0) {
           tags = `<div class="flex flex-wrap gap-2 mt-3">
                     ${articulo.etiquetas.map(tag => 
-                      `<span class="px-2 py-1 text-xs bg-blue-600 rounded-lg">${tag}</span>`
+                      `<span class="px-2 py-1 text-xs bg-sky-600 rounded-lg">${tag}</span>`
                     ).join("")}
                   </div>`;
         }
