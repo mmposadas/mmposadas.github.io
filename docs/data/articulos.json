@@ -5,8 +5,8 @@
     "fecha": "Jun 2024",
     "lugar": "Universidad de Almería",
     "preview": "Investigación de detección de emociones a través de imágenes.",
-    "descripcion": "/articulos/md/canine_feeling.md",
-    "etiquetas": ["CNN", "Visión Artificial", "Perros", "Emociones"]
+    "descripcion": "/data/md/canine_feeling.md",
+    "etiquetas": ["CNN", "Perros", "Emociones Caninas", "Comportamiento Canino"]
   },
   {
     "id": 2,
@@ -14,7 +14,7 @@
     "fecha": "2025",
     "lugar": "Universidad de Almería",
     "preview": "Profundización en los modelos necesarios para sistemas de seguridad.",
-    "descripcion": "articulos/articulo2.md",
-    "etiquetas": ["CNN", "Visión Artificial", "Video Vigilancia", "Sistemas de Seguridad", "Huellas Biométricas"]
+    "descripcion": "/data/md/face_security.md",
+    "etiquetas": ["CNN", "Video Vigilancia", "Sistemas de Seguridad", "Huellas Biométricas"]
   }
 ]
