@@ -9,14 +9,14 @@
   <script>
     // Función para cargar un fondo
     function loadBackground(file) {
-      fetch(`/components/backgrounds/hero_bg.html`)
+      fetch(`/components/backgrounds/${file}`)
         .then(res => res.text())
         .then(html => document.getElementById('background').innerHTML = html);
     }
   </script>
 </head>
   
-<body class="bg-gray-900 text-white font-sans relative">
+<body onload="loadBackground('hero_bg.html')" class="bg-gray-900 text-white font-sans relative">
 
   <!-- Fondo animado -->
   <div id="background"></div>
