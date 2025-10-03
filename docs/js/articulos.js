@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Crear card
         const card = document.createElement("a");
         card.href = `/articulos/articulo.html?id=${articulo.id}`;
-        card.className = "block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition";
+        card.className = "relative z-10 block bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition";
 
         // Fecha y lugar solo si existen
         let meta = "";
