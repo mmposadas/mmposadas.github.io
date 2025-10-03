@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "titulo": "Modelo de Detección de Emociones Caninas",
     "fecha": "Jun 2024",
     "lugar": "Universidad de Almería",
@@ -8,6 +9,7 @@
     "etiquetas": ["CNN", "Visión Artificial", "Perros", "Emociones"]
   },
   {
+    "id": 2,
     "titulo": "Modelos en Sistemas de Seguridad por Vision Artificial",
     "fecha": "2025",
     "lugar": "Universidad de Almería",
