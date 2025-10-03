@@ -6,14 +6,9 @@
   <title>Millán Posadas | Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Función para cargar un fondo
-    function loadBackground(file) {
-      fetch(`/components/backgrounds/${file}`)
-        .then(res => res.text())
-        .then(html => document.getElementById('background').innerHTML = html);
-    }
-  </script>
+
+  <!-- Llamada a los componentes -->
+  <script src="/js/components.js"></script>
 </head>
   
 <body onload="loadBackground('hero_bg.html')" class="bg-gray-900 text-white font-sans relative">
@@ -43,8 +38,5 @@
 
   <!-- FOOTER -->
   <div id="footer"></div>
-
-  <!-- Llamada a los componentes -->
-  <script src="/js/components.js"></script>
 </body>
 </html>
