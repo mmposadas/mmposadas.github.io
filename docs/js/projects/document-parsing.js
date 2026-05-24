@@ -148,7 +148,9 @@ export const documentParsingProject = {
 
             if (scanY >= tableBoxY) {
                 // El láser ha cruzado la tabla: se revela el cuadro azul de extracción
-                ctx.strokeStyle = 'rgba(26, 115, 232, 0.3)';
+                ctx.fillStyle = 'rgba(26, 115, 232, 0.06)';
+                ctx.fillRect(35, tableBoxY, 170, 45);
+                ctx.strokeStyle = '#1a73e8';
                 ctx.strokeRect(35, tableBoxY, 170, 45);
             }
 
