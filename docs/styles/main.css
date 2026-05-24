@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc; /* MODIFICADO: De --bg-main a este tono para contrastar */
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor centralizado para las vistas del router */
+.router-view-container {
+    min-height: calc(100vh - 64px - 100px);
+    display: block;
+}

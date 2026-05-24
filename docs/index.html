@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Millán Posadas | Portfolio</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Llamada a los componentes -->
-  <script src="/js/components.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data LogBook | Millán Millán Posadas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 </head>
-  
-<body onload="loadBackground('hero_bg.html')" class="text-white font-sans relative">
+<body>
 
-  <!-- Fondo animado -->
-  <div id="background"></div>
-  
-  <!-- NAV -->
-  <div id="navbar"></div>
+    <div id="app-root"></div>
 
-  <!-- HERO -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-6">
-    <h2 class="max-w-3xl text-5xl md:text-6xl font-extrabold mb-4 animate-fadeIn"><span class="text-sky-600">Millán</span>, Investigador de <span class="text-sky-600">Inteligencia Visual</span></h2>
-    <p class="text-lg md:text-xl max-w-2xl mb-6 text-justify mx-auto">
-      Mi enfoque de investigación se centra en visión artificial aplicada, desarrollando modelos probabilísticos y métodos de inferencia para 
-    el análisis de imágenes y vídeo. Exploro cómo la estadística, el aprendizaje automático y el deep learning convergen para impulsar 
-    la próxima generación de sistemas inteligentes.
-    </p>
-    <a href="articulos/index.html" 
-     class="px-6 py-3 bg-sky-600 rounded-xl font-medium 
-          hover:bg-sky-700 hover:shadow-lg hover:shadow-blue-500/30 
-          transition transform hover:scale-105">
-     Leer reflexiones
-    </a>
-  </section> 
-  
-
-  <!-- FOOTER -->
-  <div id="footer"></div>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

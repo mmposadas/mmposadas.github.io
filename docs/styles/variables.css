@@ -1,0 +1,24 @@
+:root {
+    /* Colores del Ecosistema Google */
+    --google-blue: #1a73e8;
+    --google-blue-hover: #1557b0;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --bg-main: #ffffff;
+    --bg-alt: #f8f9fa;
+    --border-color: #dadce0;
+    --chip-bg: #f1f3f4;
+    --chip-text: #3c4043;
+    
+    /* Tipografías Académicas */
+    --font-sans: 'Roboto', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* ==========================================================================
+       NUEVAS VARIABLES GLOBALES DE REFLEJO (AÑADIR AQUÍ)
+       ========================================================================== */
+    --google-blue-reflect: rgba(26, 115, 232, 0.15);
+    --glow-active: 0 0 25px rgba(26, 115, 232, 0.14);
+    --glass-blur: blur(14px);
+    --shadow-premium: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
