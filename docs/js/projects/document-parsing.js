@@ -83,13 +83,13 @@ export const documentParsingProject = {
         let animationFrameId;
         let step = 0;
 
-        // Configuración de fuentes y suavizado
+        // Configuración de suavizado nativo para gráficos vectoriales limpios
         ctx.imageSmoothingEnabled = true;
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // 1. Fondo del Canvas (Estilo laboratorio oscuro / técnico limpio)
+            // 1. Fondo del Canvas (Estilo laboratorio técnico limpio)
             ctx.fillStyle = '#f8fafc';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -104,7 +104,7 @@ export const documentParsingProject = {
             }
 
             // ==========================================================================
-            // ENTORNO IZQUIERDO: REPRESENTACIÓN FÍSICA DEL PAPER DE LAYOUTLMV3 (2 Columnas)
+            // ENTORNO IZQUIERDO: REPRESENTACIÓN FÍSICA DEL DOCUMENTO (PDF)
             // ==========================================================================
             const pdfX = 25, pdfY = 25, pdfW = 190, pdfH = 170;
             
@@ -115,13 +115,13 @@ export const documentParsingProject = {
             ctx.fillRect(pdfX, pdfY, pdfW, pdfH);
             ctx.strokeRect(pdfX, pdfY, pdfW, pdfH);
 
-            // Cabecera del Paper (LayoutLMv3: Pre-training for Document AI...)
+            // Cabecera del Documento
             ctx.fillStyle = '#1a73e8';
             ctx.fillRect(35, 35, 120, 5);
             ctx.fillStyle = '#5f6368';
             ctx.fillRect(35, 44, 70, 3);
 
-            // Simulador de Doble Columna (Líneas de texto nativas)
+            // Columnas de texto estándar (Simulador de layout)
             ctx.fillStyle = '#bdc1c6';
             // Columna Izquierda
             ctx.fillRect(35, 55, 80, 4);  ctx.fillRect(35, 63, 80, 4);
@@ -130,14 +130,14 @@ export const documentParsingProject = {
             ctx.fillRect(125, 55, 80, 4); ctx.fillRect(125, 63, 75, 4);
             ctx.fillRect(125, 71, 80, 4); ctx.fillRect(125, 79, 60, 4);
 
-            // Bloque Interactivo de Tabla de Benchmarks (Mitad inferior del layout)
+            // CÁLCULO CÍCLICO DEL LÁSER (Movimiento armónico continuo ascendente/descendente)
+            const scanY = pdfY + 5 + (Math.sin(step * 0.02) + 1) * (pdfH - 15) / 2;
             const tableBoxY = 92;
-            ctx.fillStyle = '#e8f0fe';
-            ctx.fillRect(35, tableBoxY, 170, 45);
-            ctx.strokeStyle = 'rgba(26, 115, 232, 0.3)';
-            ctx.strokeRect(35, tableBoxY, 170, 45);
 
-            // Micro-líneas internas simulando datos de la tabla de Microsoft
+            // ==========================================================================
+            // RENDERIZADO INTERACTIVO DE LA TABLA DENTRO DEL PDF (Síncrono con el láser)
+            // ==========================================================================
+            // Micro-líneas de datos internos estructurados
             ctx.fillStyle = '#1a73e8';
             ctx.fillRect(40, tableBoxY + 6, 30, 3);
             ctx.fillStyle = '#78909c';
@@ -146,87 +146,92 @@ export const documentParsingProject = {
             ctx.fillRect(40, tableBoxY + 26, 155, 2);
             ctx.fillRect(40, tableBoxY + 36, 155, 2);
 
-            // Pie de página / Ecuación flotante
+            if (scanY >= tableBoxY) {
+                // El láser ha cruzado la tabla: se revela el cuadro azul de extracción
+                ctx.strokeStyle = 'rgba(26, 115, 232, 0.3)';
+                ctx.strokeRect(35, tableBoxY, 170, 45);
+            }
+
+            // Bloque de texto inferior del documento
             ctx.fillStyle = '#bdc1c6';
             ctx.fillRect(35, 148, 80, 4);
             ctx.fillRect(35, 156, 40, 4);
-
-            // HÁZ LÁSER MULTIMODAL (Barrido descendente de inferencia de red neuronal)
-            const scanY = pdfY + 5 + (Math.sin(step * 0.02) + 1) * (pdfH - 15) / 2;
             
-            // Gradiente para el haz de luz reflectante
+            // Efecto visual de Glow translúcido sobre el área barrida
+            ctx.fillStyle = 'rgba(26, 115, 232, 0.03)';
+            ctx.fillRect(pdfX, pdfY, pdfW, scanY - pdfY > 0 ? scanY - pdfY : 0);
+
+            // Renderizado del haz láser físico
             const laserGrad = ctx.createLinearGradient(pdfX, scanY, pdfX + pdfW, scanY);
             laserGrad.addColorStop(0, 'rgba(26, 115, 232, 0.1)');
             laserGrad.addColorStop(0.5, 'rgba(26, 115, 232, 0.9)');
             laserGrad.addColorStop(1, 'rgba(26, 115, 232, 0.1)');
-            
             ctx.strokeStyle = laserGrad;
             ctx.lineWidth = 2.5;
             ctx.beginPath(); ctx.moveTo(pdfX, scanY); ctx.lineTo(pdfX + pdfW, scanY); ctx.stroke();
 
-            // Glow del haz sobre el documento
-            ctx.fillStyle = 'rgba(26, 115, 232, 0.04)';
-            ctx.fillRect(pdfX, pdfY, pdfW, scanY - pdfY);
-
             // ==========================================================================
-            // ENTORNO DERECHO: INTERPRETACIÓN ONTOLÓGICA DEL GRAFO Y LOGBOOK
+            // ENTORNO DERECHO: INTERPRETACIÓN EN CONSOLA (Síncrono con el láser)
             // ==========================================================================
-            ctx.font = '500 11px var(--font-mono), monospace';
+            ctx.font = '500 11px JetBrains Mono, Fira Code, monospace';
             ctx.fillStyle = '#1a73e8';
             ctx.fillText('ENGINE::LayoutLMv3_Inference_Core', 240, 38);
 
-            ctx.font = '11px var(--font-mono), monospace';
+            ctx.font = '11px JetBrains Mono, Fira Code, monospace';
             ctx.fillStyle = '#78909c';
             ctx.fillText(`Target: layoutlmv3_paper.pdf [Page 1]`, 240, 54);
 
-            // Simulación de detección y mapeo lógico según la posición del láser
             ctx.lineWidth = 1;
             
-            // Detección de títulos y abstract en la zona superior
+            // Detección e iluminación del bloque de Cabecera
             if (scanY > 35) {
                 ctx.fillStyle = 'rgba(30, 142, 62, 0.08)';
                 ctx.fillRect(35, 35, 120, 12);
                 ctx.strokeStyle = '#1e8e3e';
                 ctx.strokeRect(35, 35, 120, 12);
 
+                ctx.font = '11px JetBrains Mono, Fira Code, monospace';
                 ctx.fillStyle = '#1e8e3e';
                 ctx.fillText('✓ [Node_001] type: Header -> Map: OK', 250, 75);
             }
 
-            // Detección crítica de la estructura tabular mediante cálculo espaciado
-            if (scanY > tableBoxY) {
-                // Activar el recuadro del canvas a la derecha mostrando la tabla estructurada
-                ctx.fillStyle = 'rgba(26, 115, 232, 0.08)';
+            // Detección y despliegue del log de la Tabla a la derecha
+            if (scanY >= tableBoxY) {
+                ctx.fillStyle = 'rgba(26, 115, 232, 0.06)';
                 ctx.fillRect(250, 88, 320, 70);
                 ctx.strokeStyle = '#1a73e8';
                 ctx.strokeRect(250, 88, 320, 70);
 
+                ctx.font = '500 11px JetBrains Mono, Fira Code, monospace';
                 ctx.fillStyle = '#1a73e8';
                 ctx.fillText('⚡ [Node_014] type: Table (TSR Engine Active)', 260, 104);
                 
-                ctx.font = '10px var(--font-mono), monospace';
+                ctx.font = '10px JetBrains Mono, Fira Code, monospace';
                 ctx.fillStyle = '#5f6368';
                 ctx.fillText('DataFrame: Matrix(4x5) | text_masking: True', 260, 120);
                 ctx.fillStyle = '#1557b0';
                 ctx.fillText('| Dataset   | LayoutLMv2 | LayoutLMv3 |', 260, 136);
                 ctx.fillText('| FUNSD (F1)| 84.20%     | 86.15%     |', 260, 148);
             } else {
+                ctx.font = '11px JetBrains Mono, Fira Code, monospace';
                 ctx.fillStyle = '#9aa0a6';
                 ctx.fillText('... Buscando fronteras jerárquicas ...', 250, 104);
             }
 
-            // TELEMETRÍA DE PRODUCCIÓN (HUD INFERIOR)
+            // ==========================================================================
+            // TELEMETRÍA DE PRODUCCIÓN (HUD INFERIOR CONSTANTE)
+            // ==========================================================================
             ctx.fillStyle = 'rgba(218, 220, 224, 0.4)';
             ctx.fillRect(240, 172, 330, 24);
             ctx.strokeStyle = 'rgba(218, 220, 224, 0.8)';
             ctx.strokeRect(240, 172, 330, 24);
 
-            ctx.font = '500 10px var(--font-mono), monospace';
+            ctx.font = '500 10px JetBrains Mono, Fira Code, monospace';
             ctx.fillStyle = '#1e8e3e';
-            ctx.fillText('STATUS: Memory Graph Built', 248, 188);
+            ctx.fillText('STATUS: Ingestion Pipeline Active', 248, 188);
             
             ctx.fillStyle = '#202124';
-            ctx.fillText(`Device: PyTorch GPU`, 435, 188);
+            ctx.fillText(`Device: PyTorch GPU`, 450, 188);
 
             step++;
             animationFrameId = requestAnimationFrame(animate);
