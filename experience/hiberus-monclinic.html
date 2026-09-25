@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plataforma de soporte clínico BCLC: datos, árbol de decisión y pipeline RAG sobre PubMed Central — Millán Millán Posadas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-root="../">
+<header class="site-header">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="topbar">
+    <a href="../index.html" class="nav-brand" style="font-weight:800;">Millán <span style="color:var(--accent);">Millán Posadas</span></a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Abrir menú">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div class="sidebar-backdrop" data-nav-toggle></div>
+  <nav class="sidebar" data-sidebar>
+    <div class="sidebar-brand">Millán<span>Millán Posadas</span></div>
+    <ul class="side-nav">
+      <li><a href="../index.html">
+        <span class="nav-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
+        Inicio
+      </a></li>
+      <li><a href="../about.html">
+        <span class="nav-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.6-4 5-6 7.5-6s5.9 2 7.5 6"/></svg></span>
+        Sobre mí
+      </a></li>
+      <li><a href="../experience/index.html">
+        <span class="nav-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M8 7.5V5.8a1.8 1.8 0 0 1 1.8-1.8h4.4A1.8 1.8 0 0 1 16 5.8v1.7"/><path d="M3 12.5h18"/></svg></span>
+        Experiencia
+      </a></li>
+      <li><a href="../projects/index.html">
+        <span class="nav-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg></span>
+        Proyectos
+      </a></li>
+      <li><a href="../contact.html">
+        <span class="nav-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7.5 8 5.5 8-5.5"/></svg></span>
+        Contacto
+      </a></li>
+    </ul>
+    <div class="sidebar-foot">
+      <button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">
+        <svg class="icon-svg" data-icon="moon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="icon-svg" data-icon="sun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span data-theme-label>Modo oscuro</span>
+      </button>
+      <a class="nav-cta" href="../assets/CV_Millan_Millan_Posadas.pdf" target="_blank" rel="noopener">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Descargar CV
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section style="padding-top:56px;padding-bottom:12px;">
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="../index.html">Inicio</a> / <a href="index.html">Experiencia</a> / Monclinic</div>
+      <div class="eyebrow reveal">Hiberus · Fundación Monclinic</div>
+      <h1 class="reveal">Plataforma de soporte clínico BCLC: datos, árbol de decisión y pipeline RAG sobre PubMed Central</h1>
+      <p class="lead reveal" style="max-width:680px;">Aplicativo clínico con modelo de datos en PostgreSQL y árbol de decisión BCLC para recomendación de tratamientos, más un pipeline de análisis de layouts complejos y RAG sobre 26.000+ publicaciones de PubMed Central sobre cáncer hepatocelular.</p>
+      <div class="project-meta reveal"><span class="badge">RAG</span><span class="badge">PostgreSQL</span><span class="badge">BCLC</span><span class="badge">Investigación biomédica</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid grid-2" style="align-items:start;">
+      <div class="reveal">
+        <h2>El reto</h2>
+        <p>La Fundación Monclinic necesitaba, por un lado, una aplicación clínica capaz de persistir los datos de cada caso y recomendar tratamiento siguiendo fielmente el protocolo oficial de estadificación Barcelona Clinic Liver Cancer (BCLC), con informes que los profesionales pudieran compartir fácilmente; y por otro, sistematizar el conocimiento disperso en un volumen masivo de papers de PubMed Central sobre cáncer hepatocelular, filtrando lo relevante y extrayendo de forma estructurada los datos de población, tratamiento y resultados de cada estudio.</p>
+        <h2>Mi aportación</h2>
+        <p>Diseñé el modelo de datos del aplicativo y lo desarrollé sobre PostgreSQL para dar persistencia a los casos clínicos, y desarrollé el árbol de decisión basado en reglas que recomienda el tratamiento siguiendo el protocolo oficial BCLC con cobertura completa. Sobre esos resultados, construí la generación automática de documentos PDF para visualizar los datos del paciente y la recomendación de tratamiento. En paralelo, diseñé un pipeline de análisis de layouts complejos sobre los papers de PubMed Central, con un filtrado que descartaba los documentos que no eran estudios y los estudios no relevantes para el dominio, y una clasificación por tipo de estudio y por objetivo de investigación. Extraje los datos de población, tratamientos y resultados por cada línea de investigación (arm) descrita en el paper, y generé embeddings de esa información para alimentar un sistema de recuperación aumentada (RAG). Automaticé además el análisis de licencias de los documentos, identificando un 18,9% incompatible con explotación comercial y un 21,5% no apto para la base de conocimiento, y reduje los costes de inferencia de LLM en aproximadamente un 75% mediante prompt engineering y selección de modelo.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Ficha técnica</h3>
+        <div class="skill-chips" style="margin-bottom:18px;"><span class="chip"><span class="dot dot-core"></span>Python</span><span class="chip"><span class="dot dot-core"></span>PostgreSQL</span><span class="chip"><span class="dot dot-core"></span>Reglas de negocio</span><span class="chip"><span class="dot dot-core"></span>Generación de PDF</span><span class="chip"><span class="dot dot-core"></span>Análisis de layout</span><span class="chip"><span class="dot dot-core"></span>Clasificación de texto</span><span class="chip"><span class="dot dot-core"></span>Embeddings</span><span class="chip"><span class="dot dot-core"></span>RAG</span></div>
+        <div class="metric-strip"><div class="m"><b>26.000+</b><span>Publicaciones analizadas</span></div><div class="m"><b>-75%</b><span>Coste de inferencia LLM</span></div><div class="m"><b>100%</b><span>Cobertura de reglas BCLC</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container reveal">
+      <h2>Detalle del proceso</h2>
+      <div class="timeline"><div class="timeline-item"><span class="timeline-date">01</span><h4>Modelo de datos en PostgreSQL</h4><p>Diseño y desarrollo del esquema relacional del aplicativo para persistir los casos clínicos.</p></div><div class="timeline-item"><span class="timeline-date">02</span><h4>Árbol de decisión BCLC</h4><p>Implementación del sistema de reglas que recomienda el tratamiento según el protocolo oficial, con cobertura completa.</p></div><div class="timeline-item"><span class="timeline-date">03</span><h4>Generación de informes PDF</h4><p>Visualización de los datos del paciente y la recomendación de tratamiento en documentos PDF generados automáticamente.</p></div><div class="timeline-item"><span class="timeline-date">04</span><h4>Análisis de layouts complejos</h4><p>Extracción de la estructura de los papers de PubMed Central, heterogéneos en formato y disposición.</p></div><div class="timeline-item"><span class="timeline-date">05</span><h4>Filtrado de relevancia</h4><p>Descarte automático de documentos que no son estudios y de estudios no relevantes para el dominio.</p></div><div class="timeline-item"><span class="timeline-date">06</span><h4>Clasificación de estudios</h4><p>Categorización por tipo de estudio y por objetivo de la investigación.</p></div><div class="timeline-item"><span class="timeline-date">07</span><h4>Extracción por línea de investigación (arm)</h4><p>Datos de poblaciones, tratamientos y resultados extraídos por cada arm descrito en el paper.</p></div><div class="timeline-item"><span class="timeline-date">08</span><h4>Vectorización para RAG</h4><p>Generación de embeddings de la información extraída para alimentar el sistema de recuperación aumentada.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="callout"><p>Diseñar el árbol BCLC y el modelo de datos en Postgres, y en paralelo convertir cientos de papers heterogéneos en datos estructurados por línea de investigación, fueron dos caras del mismo reto: que cada dato fuera trazable hasta su fuente.</p></div>
+      <div class="btn-row">
+        <a href="index.html" class="btn btn-secondary">← Volver a Experiencia</a>
+      </div>
+    </div>
+  </section>
+</main>
+<div data-include="footer"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
